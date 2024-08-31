@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart with Love</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente de fundo */
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+        }
+        .heart {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background-color: red;
+            transform: rotate(-45deg);
+            margin: 0 auto;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -60px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: 60px;
+        }
+        .message {
+            margin-top: 150px; /* Ajustado para a posição da mensagem */
+            font-size: 36px; /* Ajustado o tamanho da fonte */
+            font-weight: bold;
+            color: #ff007f; /* Cor vibrante */
+            text-shadow: 
+                0 0 10px #ff007f, /* Brilho intenso */
+                0 0 20px #ff007f, 
+                0 0 30px #ff007f;
+            animation: fadeInOut 2s ease-in-out infinite;
+        }
+
+        /* Efeitos de fundo com fogos de artifício */
+        .fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .firework {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.7) 60%);
+            pointer-events: none;
+            animation: explode 2s infinite ease-in-out;
+        }
+        .firework:nth-child(1) {
+            width: 50px;
+            height: 50px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        .firework:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 30%;
+            left: 25%;
+            animation-delay: 0.5s;
+        }
+        .firework:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            top: 50%;
+            left: 40%;
+            animation-delay: 1s;
+        }
+        .firework:nth-child(4) {
+            width: 70px;
+            height: 70px;
+            top: 20%;
+            left: 60%;
+            animation-delay: 1.5s;
+        }
+        .firework:nth-child(5) {
+            width: 80px;
+            height: 80px;
+            top: 70%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(-45deg);
+            }
+            100% {
+                transform: scale(1) rotate(-45deg);
+            }
+        }
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        @keyframes explode {
+            0% {
+                transform: scale(0) translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1) translate(-50%, -50%);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0) translate(0, 0);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart"></div>
+        <div class="message">Eu te amo</div>
+        <div class="fireworks">
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+        </div>
+    </div>
+</body>
+</html>
